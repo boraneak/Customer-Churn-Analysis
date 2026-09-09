@@ -1,25 +1,31 @@
-# Customer Churn Analysis
-
-## Project Overview
-
-Customer churn is a major challenge for subscription-based businesses. Losing customers increases acquisition costs and reduces revenue.
-
-This project analyzes customer demographics, service usage, contract information, and billing behavior to identify factors associated with customer churn.
-
-The project applies exploratory data analysis (EDA) and machine learning techniques to understand churn patterns, predict customers at risk of leaving, and provide actionable retention strategies.
-
----
+# Telco Customer Churn
 
 ## Business Problem
 
-Subscription businesses need to understand why customers leave and identify high-risk customers before they churn.
+Customer churn is a major challenge for subscription-based businesses. Losing customers increases acquisition costs and reduces recurring revenue.
 
-The goal of this project is to:
+The business needs to understand which customer characteristics are associated with churn so that retention effort can be prioritized toward higher-risk
+customer segments.
 
-- Analyze customer churn patterns.
-- Identify the main factors influencing customer churn.
-- Build an interpretable churn prediction model.
-- Translate analytical findings into actionable retention strategies.
+This project analyzes customer demographics, service usage, contact information, tenure, and billing behaviors to identify patterns associated with customer churn
+and develop an interpretable classification model. 
+
+---
+
+## Business Question 
+
+Which customer characteristics are most strongly associated with churn, and can a machine learning model effectively identify customers who are more likely to churn?
+
+---
+
+## Objective
+
+The objective of this project is to:
+
+1. Identify customer segments with higher churn rates.
+2. Understand the key characteristics associated customer churn.
+3. Build an interpretable machine learning model to classify customers according to their churn risk.
+4. Translate analytical findings intro practical customer retention strategies.
 
 ---
 
@@ -34,17 +40,36 @@ https://www.kaggle.com/datasets/blastchar/telco-customer-churn
 - 7,043 customers
 - 21 columns
 
-**Data Cleaning:**
+The dataset contains customer information covering demographics, services, contract types, tenure, and billing behavior.
 
-The dataset contained missing values in the `TotalCharges` column. After removing incomplete records, 7,032 customers were used for exploratory analysis and model training.
+During data preparation, records with missing value in `TotalCharges` were removed, resulting in `7,032 usable customer records for analysis and modeling.
 
-**Target Variable:**
+---
+
+## Target Variable:
+
+The target variable is:
 
 `Churn`
 
-**Project Goal:**
+- `Yes` - customer churned
+- `No`  - customer did not churn
 
-Predict whether a customer is likely to leave the service and identify the factors associated with customer churn.
+The model uses the available customer information to classify the observed churn outcome.
+
+---
+
+## Success Criteria
+
+The model performance is evaluated using:
+
+- `Recall`: measures how effectively the model identifies customers who churn.
+- `Precision`: measures how many customers identified as churn-risk actually churn.
+- `F1 Score`: provides a balance between precision and recall.
+- `ROC-AUC`: measures the model ability to distinguish between customers who churn and those who do not.
+- `Accuracy`: provides an overall measure of classification performance.
+
+Because failing to identify a customer who churns may reduce the effectiveness of retention effort, `Recall is an important evaluation metric for this business problem.`
 
 ---
 
