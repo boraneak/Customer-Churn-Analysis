@@ -74,6 +74,21 @@ On the cleaned dataset:
 These are associations in this dataset, not evidence that contract changes,
 payment-method changes, or support adoption cause churn to fall.
 
+## Visual highlights
+
+The figures below are exported by running the notebook and are committed under
+`reports/figures/` so they render directly in this README.
+
+![Observed churn rates by contract type: month-to-month 42.7%, one-year 11.3%, and two-year 2.8%.](reports/figures/churn_rate_by_contract.png)
+
+*Observed churn rate within each contract group; descriptive association, not a
+causal estimate.*
+
+![Precision-recall curve for the refined Logistic Regression, with threshold markers at 0.3, 0.5, and 0.7.](reports/figures/precision_recall_thresholds.png)
+
+*Threshold markers show the precision/recall trade-off; the 0.5 threshold is
+used for the model comparison, not asserted to be operationally optimal.*
+
 ## Holdout model results
 
 The following results were reproduced by executing the notebook from a fresh
@@ -134,6 +149,10 @@ Customer-Churn-Analysis/
 │       └── Telco-Customer-Churn.csv
 ├── notebooks/
 │   └── churn_analysis.ipynb
+├── reports/
+│   └── figures/
+│       ├── churn_rate_by_contract.png
+│       └── precision_recall_thresholds.png
 ├── tests/
 │   └── test_churn_analysis.py
 ├── churn_analysis.py
